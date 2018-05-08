@@ -11,8 +11,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include Makefile.common
-
 STATICCHECK_IGNORE =
 TSDB_BIN = "./tsdb"
 NUM_METRICS ?= 1000
@@ -21,9 +19,7 @@ TEST_DATA_DIR ?= "$(PROJECT_DIR)/testdata"
 TEST_DATASET ?= "20kseries.json"
 BENCH_DIR ?= "./benchout"
 
-ifdef DEBUG
-	bindata_flags = -debug
-endif
+include ../../Makefile.common
 
 # Since tsdb client yet has no tests we can at least try to run benchmark
 test: bench

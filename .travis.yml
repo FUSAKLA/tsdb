@@ -16,3 +16,6 @@ before_install:
 
 install:
   - go get -v -t ./...
+
+script:
+  - make check_license style unused test staticcheck
